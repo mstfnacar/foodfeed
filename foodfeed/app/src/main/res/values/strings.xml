@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">FoodFeed</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_tabbed_main">TabbedMainActivity</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="drawer_open">Drawer opened</string>
+    <string name="drawer_close">Drawer closed</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">No Favorite post yet..</string>
+
+    <string-array name="category_array">
+        <item>Select a category</item>
+        <item>Italian</item>
+        <item>Far East</item>
+        <item>Vegetable</item>
+        <item>Meat</item>
+        <item>Kebap</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="drawer_array">
+        <item>item1</item>
+        <item>item2</item>
+        <item>Settings</item>
+        <item>item4</item>
+    </string-array>
+</resources>

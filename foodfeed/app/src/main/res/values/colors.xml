@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <color name="BackgroundColor">#e0e0e0</color>
+    <color name="accent_material_light">#eb5e28</color>
+    <color name="buttoncolor">#2196F3</color>
+    <color name="buttoncolor2">#E8D7C5</color>
+    <color name="buttontextcolor2">#000</color>
+    <color name="buttontextcolor">#FFF</color>
+    <color name="edittextcolor">#D32F2F</color>
+    <color name="toolbarbackground">#2196F3</color>
+    <color name="toolbarbackground2">#2F2F2F</color>
+    <color name="toolbartextcolor">#FFF</color>
+    <color name="toolbarsubtextcolor">#DDD</color>
+    <color name="swipecolor1">#D32F2F</color>
+    <color name="swipecolor2">#2196F3</color>
+    <color name="activitybackgroundcolor2">#1976D2</color>
+    <color name="activitybackgroundcolor">#2B2D3A</color>
+
+</resources>

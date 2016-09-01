@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true"
+    tools:context=".Activities.PostActivity">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/posttoolbar"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:minHeight="?attr/actionBarSize"
+            android:background="#2196F3"
+            app:titleTextColor="#FFF"
+            app:title="FoodFeed"
+            app:subtitle="New Post"
+            app:subtitleTextColor="#DDD"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            tools:context=".Activities.PostActivity">
+
+            <com.pem.mustafa.servertest.Other.CustomImageView
+                android:id="@+id/foodphoto"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerHorizontal="true"
+                android:padding="2dp"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/customprofilphoto"
+                android:src="@drawable/fooddefaulticon"
+                android:clickable="true"
+                android:onClick="addFoodPhoto"/>
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/postName"
+                android:layout_marginTop="50dp"
+                android:hint="Name"
+                android:padding="10dp"
+                android:background="@drawable/edittext_rounded"
+                android:layout_below="@id/foodphoto"
+                android:layout_centerHorizontal="true"
+                android:inputType="text"
+                android:layout_marginBottom="3dp"/>
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/postCategory"
+                android:hint="Category"
+                android:layout_below="@+id/postName"
+                android:layout_alignStart="@+id/postName"
+                android:inputType="text"
+                android:padding="10dp"
+                android:background="@drawable/edittext_rounded"
+                android:layout_marginBottom="3dp"
+                android:visibility="gone"/>
+
+            <Spinner
+                android:id="@+id/postcategoryspinner"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@id/postName"
+                android:layout_marginBottom="3dp">
+
+            </Spinner>
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/postMeetPoint"
+                android:hint="Meeting Point"
+                android:layout_below="@+id/postcategoryspinner"
+                android:layout_alignStart="@+id/postCategory"
+                android:inputType="text"
+                android:padding="10dp"
+                android:background="@drawable/edittext_rounded"
+                android:layout_marginBottom="3dp"/>
+
+            <Button
+                android:id="@+id/postgetadressbutton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/postMeetPoint"
+                android:text="Get Adress"
+                android:onClick="getAdressButtonClick"/>
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/postPrice"
+                android:hint="Price"
+                android:layout_below="@+id/postgetadressbutton"
+                android:layout_alignStart="@+id/postMeetPoint"
+                android:inputType="number"
+                android:padding="10dp"
+                android:background="@drawable/edittext_rounded"
+                android:layout_marginBottom="3dp"/>
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/postAmount"
+                android:hint="Amount"
+                android:layout_below="@+id/postPrice"
+                android:layout_alignStart="@+id/postPrice"
+                android:inputType="number"
+                android:padding="10dp"
+                android:background="@drawable/edittext_rounded"
+                android:layout_marginBottom="3dp"/>
+
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Submit"
+                android:id="@+id/postSubmitButton"
+                android:layout_below="@+id/postAmount"
+                android:layout_alignEnd="@+id/postAmount"
+                android:textColor="@color/buttontextcolor"
+                android:background="@color/buttoncolor"
+                android:layout_marginTop="47dp"
+                android:onClick="submitPostWithPhoto"
+                android:visibility="visible"/>
+
+            <LinearLayout
+                android:id="@+id/postprogress"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="47dp"
+                android:layout_below="@+id/postAmount"
+                android:layout_alignEnd="@+id/postAmount"
+                android:visibility="gone"
+                android:gravity="center">
+
+                <com.pnikosis.materialishprogress.ProgressWheel
+                    android:visibility="visible"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginEnd="2dp"
+                    app:matProg_barColor="#1976D2"
+                    android:layout_centerVertical="true"
+                    android:layout_centerInParent="true"
+                    app:matProg_progressIndeterminate="true"
+                    android:layout_alignParentEnd="true"
+                    app:matProg_fillRadius="true" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>

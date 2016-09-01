@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Activities.PostDetailActivity"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/postdetailtoolbar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:minHeight="?attr/actionBarSize"
+        android:background="#2196F3"
+        app:titleTextColor="#FFF"
+        app:title="FoodFeed"
+        app:subtitle="Post Detail"
+        app:subtitleTextColor="#DDD"/>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin">
+
+        <ImageView
+            android:id="@+id/postdetailfoodphoto"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/fooddefaulticon"
+            />
+
+        <TextView
+            android:id="@+id/postdetailfoodname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:textSize="25sp"
+            android:hint="Food Name"
+            android:layout_toRightOf="@id/postdetailfoodphoto"/>
+
+        <TextView
+            android:id="@+id/postdetailprice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:textSize="25sp"
+            android:hint="5 TL"
+            android:layout_below="@id/postdetailfoodname"
+            android:layout_toRightOf="@id/postdetailfoodphoto"/>
+
+        <View
+            android:id="@+id/postdetailfirstdivider"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#295773"
+            android:layout_below="@id/postdetailfoodphoto"/>
+
+        <TextView
+            android:id="@+id/postdetaildescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="22sp"
+            android:hint="Description"
+            android:layout_below="@id/postdetailfirstdivider"/>
+
+        <View
+            android:id="@+id/postdetailseconddivider"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#295773"
+            android:layout_below="@id/postdetaildescription"/>
+
+
+        <Button
+            android:visibility="visible"
+            android:id="@+id/postdetailrequestbutton"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Request"
+            android:textAllCaps="true"
+            android:textColor="#FFF"
+            android:background="@color/buttoncolor"
+            android:layout_below="@id/postdetailseconddivider"
+            android:onClick="requestButtonClick"/>
+
+        <LinearLayout
+            android:id="@+id/postdetailrequestprogress"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/postdetailseconddivider"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <com.pnikosis.materialishprogress.ProgressWheel
+                android:visibility="visible"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginEnd="2dp"
+                app:matProg_barColor="#1976D2"
+                android:layout_centerVertical="true"
+                android:layout_centerInParent="true"
+                app:matProg_progressIndeterminate="true"
+                android:layout_alignParentEnd="true"
+                app:matProg_fillRadius="true" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/postdetailreportbutton"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Report"
+            android:textAllCaps="true"
+            android:textColor="#FFF"
+            android:background="@color/buttoncolor"
+            android:layout_below="@id/postdetailseconddivider"
+            android:layout_alignParentRight="true"/>
+
+        <View
+            android:id="@+id/postdetailthirddivider"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#295773"
+            android:layout_below="@id/postdetailrequestbutton"/>
+
+        <ImageView
+            android:id="@+id/postdetailuserphoto"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/cheficon2"
+            android:layout_below="@id/postdetailthirddivider"
+            android:onClick="userPhotoOnClick"
+            />
+
+        <TextView
+            android:id="@+id/postdetailusername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="18sp"
+            android:hint="User Name"
+            android:layout_below="@id/postdetailthirddivider"
+            android:layout_toRightOf="@id/postdetailuserphoto"
+            android:onClick="userPhotoOnClick"/>
+
+        <TextView
+            android:id="@+id/postdetailusertitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="18sp"
+            android:hint="Title"
+            android:layout_below="@id/postdetailusername"
+            android:layout_toRightOf="@id/postdetailuserphoto"/>
+
+
+
+
+
+
+
+
+
+
+    </RelativeLayout>
+</LinearLayout>

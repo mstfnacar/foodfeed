@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Activities.ProfileActivity" >
+
+    <item android:id="@+id/profileinboxmenuitem"
+        android:title="Messages"
+        android:icon="@drawable/ic_question_answer_white_24dp"
+        android:orderInCategory="100"
+        app:showAsAction="always" />
+
+    <item android:id="@+id/profilebadgesmenuitem"
+        android:title="Badges"
+        android:icon="@drawable/ic_default_badge"
+        android:orderInCategory="100"
+        app:showAsAction="always" />
+
+</menu>

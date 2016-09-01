@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Activities.FollowListActivity"
+    android:background="#55dddddd">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/followlisttoolbar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:minHeight="?attr/actionBarSize"
+        android:background="@color/toolbarbackground2"
+        app:title="FoodFeed"
+        app:subtitle="Follow List"
+        app:titleTextColor="@color/toolbartextcolor"
+        app:subtitleTextColor="@color/toolbarsubtextcolor"
+        android:layout_alignParentTop="true"/>
+
+    <TextView
+        android:id="@+id/followlistemptytext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No people to show yet.."
+        android:textColor="#FFF"
+        android:layout_marginTop="10dp"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:visibility="gone"
+        android:layout_below="@id/followlisttoolbar"/>
+
+    <com.pnikosis.materialishprogress.ProgressWheel
+        android:id="@+id/followlistprogresswheel"
+        android:visibility="visible"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:padding="5dp"
+        android:layout_centerVertical="true"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/customprogresscontainer"
+        app:matProg_barColor="#1976D2"
+        app:matProg_barWidth="3dp"
+        app:matProg_rimColor="#55000000"
+        app:matProg_progressIndeterminate="true"
+        app:matProg_fillRadius="true" />
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/followlistrecyclerlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/feed_margin_horizontal"
+        android:paddingRight="@dimen/feed_margin_horizontal"
+        android:paddingTop="@dimen/feed_margin_vertical"
+        android:paddingBottom="@dimen/feed_margin_vertical"
+        android:visibility="gone"
+        android:layout_below="@id/followlisttoolbar">
+
+        <LinearLayout
+            android:id="@+id/followlistLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.v4.widget.SwipeRefreshLayout
+                android:id="@+id/followlistswiperefresh"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.v7.widget.RecyclerView
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/followlistRecyclerView"
+                    android:layout_marginBottom="5dp"
+                    android:visibility="visible"/>
+
+            </android.support.v4.widget.SwipeRefreshLayout>
+        </LinearLayout>
+
+    </android.support.design.widget.CoordinatorLayout>
+</RelativeLayout>

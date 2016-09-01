@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="220dp"
+    android:background="#fff"
+    android:paddingTop="0dp"
+    android:paddingBottom="3dp"
+    >
+
+    <ImageView
+        android:id="@+id/foodimagev3"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:src="@drawable/defaultfood"
+        android:scaleType="centerCrop"
+        />
+
+    <TextView
+        android:id="@+id/fooduserv3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="asd"
+        android:visibility="invisible"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_gravity="bottom"
+        android:background="@drawable/custom_mainfeed_background">
+
+        <TextView
+            android:id="@+id/foodnamev3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:text="Foodname"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="90dp"
+            android:fontFamily="sans-serif-condensed"/>
+
+        <TextView
+            android:id="@+id/foodplacev3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:textColor="#aa000000"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="90dp"
+            android:text="at some address "
+            android:textStyle="italic"
+            android:layout_below="@id/foodnamev3"
+            android:fontFamily="sans-serif-condensed"/>
+
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="125dp"
+        android:layout_marginEnd="20dp"
+        android:layout_gravity="right"
+        android:padding="5dp"
+        android:background="@drawable/custom_food_user_photo">
+
+        <com.pem.mustafa.servertest.Other.CustomProfileImageView
+            android:id="@+id/fooduserimagev3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/profile_default"
+            />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/foodpricev3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:background="@drawable/custom_mainfeed_price_background"
+        android:text="7 TL"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_margin="5dp"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_gravity="top|right"
+        />
+
+
+
+
+
+
+
+</FrameLayout>

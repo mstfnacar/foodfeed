@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v4.widget.DrawerLayout
+    android:id="@+id/drawer_layout_mainactivity"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Activities.LoginActivity"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/maintoolbar"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:minHeight="?attr/actionBarSize"
+            android:background="@color/toolbarbackground2"
+            app:titleTextColor="#FFF"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            android:layout_alignParentTop="true">
+            <!---app:title="Timeline"
+            app:subtitle="Eat them all"
+            app:subtitleTextColor="#DDD"-->
+
+            <TextView
+                android:id="@+id/main_toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Foodfeed"
+                android:textSize="35sp"
+                android:textStyle="bold"
+                android:textColor="#FFF"/>
+
+            <ImageView
+                android:id="@+id/main_toolbar_tunebutton"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_tune_white_24dp"
+                android:layout_margin="5dp"
+                android:layout_gravity="end"
+                android:clickable="true"
+                android:onClick="rightDrawerControl"/>
+
+        </android.support.v7.widget.Toolbar>
+
+        <android.support.v4.widget.DrawerLayout
+            android:id="@+id/rightdrawer_layout_mainactivity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.pnikosis.materialishprogress.ProgressWheel
+                    android:id="@+id/mainprogresswheel"
+                    android:visibility="visible"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerVertical="true"
+                    android:layout_centerInParent="true"
+                    android:layout_centerHorizontal="true"
+                    app:matProg_barColor="#129793"
+                    app:matProg_rimColor="#88336699"
+                    app:matProg_progressIndeterminate="true"
+                    app:matProg_fillRadius="true" />
+
+                <android.support.design.widget.CoordinatorLayout
+                    android:id="@+id/mainrecyclerlayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="@dimen/feed_margin_horizontal"
+                    android:paddingRight="@dimen/feed_margin_horizontal"
+                    android:paddingTop="@dimen/feed_margin_vertical"
+                    android:paddingBottom="@dimen/feed_margin_vertical"
+                    android:background="#44ffffff"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:id="@+id/feedLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <android.support.v4.widget.SwipeRefreshLayout
+                            android:id="@+id/mainswiperefresh"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <android.support.v7.widget.RecyclerView
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:id="@+id/feedRecyclerView"
+                                android:layout_marginBottom="5dp"
+                                android:visibility="visible"/>
+
+                        </android.support.v4.widget.SwipeRefreshLayout>
+                    </LinearLayout>
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/fab"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|end"
+                        android:layout_margin="16dp"
+                        android:src="@drawable/ic_add_white_24dp"
+                        app:elevation="6dp"
+                        app:borderWidth="0dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="5dp"
+                        />
+
+                </android.support.design.widget.CoordinatorLayout>
+
+                <LinearLayout
+                    android:id="@+id/mainv2logoutprogresswheel"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:background="#bb000000">
+
+                    <com.pnikosis.materialishprogress.ProgressWheel
+                        android:visibility="visible"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:padding="5dp"
+                        android:background="@drawable/customprogresscontainer"
+                        app:matProg_barColor="#1976D2"
+                        app:matProg_barWidth="3dp"
+                        app:matProg_rimColor="#55000000"
+                        app:matProg_progressIndeterminate="true"
+                        app:matProg_fillRadius="true" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rightdrawer_item_rl"
+                android:layout_width="250dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:background="#bb000000"
+                android:clickable="true">
+
+                <TextView
+                    android:id="@+id/drawer_filtertitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:text="Filters"
+                    android:textSize="20sp"
+                    android:textColor="#EFF"
+                    android:layout_marginTop="10dp"
+                    android:paddingStart="5dp"/>
+
+                <View
+                    android:id="@+id/drawer_fiter_titlebar"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_height="2dp"
+                    android:background="#EEF"
+                    android:layout_below="@id/drawer_filtertitle"
+                    android:layout_gravity="center_horizontal" />
+
+                <TextView
+                    android:id="@+id/drawer_filter_filtertext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="#FFF"
+                    android:paddingStart="5dp"
+                    android:layout_below="@id/drawer_fiter_titlebar"
+                    android:text="Distance filter"
+                    android:fontFamily="sans-serif-smallcaps"/>
+
+                <SeekBar
+                    android:id="@+id/drawer_seekbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="30dp"
+                    android:paddingEnd="30dp"
+                    android:progress="5"
+                    android:max="20"
+                    android:layout_below="@id/drawer_filter_filtertext"/>
+
+                <TextView
+                    android:id="@+id/drawer_seekbar_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5"
+                    android:visibility="invisible"
+                    android:textSize="18sp"
+                    android:textColor="#EFF"
+                    android:padding="3dp"
+                    android:background="@drawable/customrectbackground"
+                    android:fontFamily="sans-serif-smallcaps"/>
+
+                <View
+                    android:id="@+id/drawer_fiter_horizontalbar"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="120dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_height="1dp"
+                    android:background="#EEF"
+                    android:layout_below="@id/drawer_seekbar"
+                    android:layout_centerHorizontal="true"/>
+
+                <TextView
+                    android:id="@+id/drawer_filter_filtertext2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="#FFF"
+                    android:paddingStart="5dp"
+                    android:layout_below="@id/drawer_fiter_horizontalbar"
+                    android:text="Price filter"
+                    android:fontFamily="sans-serif-smallcaps"/>
+
+                <TextView
+                    android:id="@+id/dummyText1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="#99FFFFFF"
+                    android:paddingStart="5dp"
+                    android:layout_below="@id/drawer_filter_filtertext2"
+                    android:text="To be implemented"
+                    android:textStyle="italic"
+                    android:fontFamily="sans-serif-condensed"/>
+
+                <View
+                    android:id="@+id/drawer_fiter_horizontalbar2"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="120dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_height="1dp"
+                    android:background="#EEF"
+                    android:layout_below="@id/dummyText1"
+                    android:layout_centerHorizontal="true"/>
+
+                <LinearLayout
+                    android:id="@+id/drawer_settings_part"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@id/drawer_fiter_horizontalbar2"
+                    android:clickable="true"
+                    android:onClick="goToSettings">
+
+                    <ImageView
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_settings_white_24dp"
+                        android:layout_gravity="center_vertical"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceListItemSmall"
+                        android:gravity="center_vertical"
+                        android:layout_gravity="center_vertical"
+                        android:text="Settings"
+                        android:textSize="15sp"
+                        android:textColor="#FFF"
+                        android:padding="15dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@id/drawer_settings_part"
+                    android:clickable="true"
+                    android:onClick="logOutAction">
+
+                    <ImageView
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_logout_white_24dp"
+                        android:layout_gravity="center_vertical"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceListItemSmall"
+                        android:gravity="center_vertical"
+                        android:layout_gravity="center_vertical"
+                        android:text="Log Out"
+                        android:textSize="15sp"
+                        android:textColor="#FFF"
+                        android:padding="15dp"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </android.support.v4.widget.DrawerLayout>
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/left_drawer_mainactivity"
+        android:layout_width="250dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:choiceMode="singleChoice"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0dp"
+        android:background="#bb000000"/>
+
+
+
+</android.support.v4.widget.DrawerLayout>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Activities.SearchActivity"
+    android:orientation="vertical"
+    android:background="#DDD">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/searchtoolbar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:minHeight="?attr/actionBarSize"
+        android:background="@color/toolbarbackground2"
+        app:titleTextColor="#FFF"
+        app:title="FoodFeed"
+        app:subtitle="Meal Search"
+        app:subtitleTextColor="#DDD"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin">
+
+        <AutoCompleteTextView
+            android:id="@+id/searchtext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:hint="Search food"
+            android:inputType="text"
+            android:textColor="#000"
+            android:background="@drawable/edittext_rounded"/>
+
+        <Button
+            android:id="@+id/searchbutton"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="Search"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/custombuttonbackground2"
+            android:textColor="@color/buttontextcolor"
+            android:onClick="searchAction"
+            android:layout_below="@id/searchtext"/>
+
+
+
+        <com.pnikosis.materialishprogress.ProgressWheel
+            android:id="@+id/searchprogresswheel"
+            android:visibility="visible"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:padding="5dp"
+            android:layout_centerVertical="true"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/customprogresscontainer"
+            app:matProg_barColor="#1976D2"
+            app:matProg_barWidth="3dp"
+            app:matProg_rimColor="#55000000"
+            app:matProg_progressIndeterminate="true"
+            app:matProg_fillRadius="true" />
+
+
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/searchrecyclerview"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="10dp"
+            android:visibility="gone"
+            android:layout_below="@id/searchbutton"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#DDD">
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        card_view:cardCornerRadius="3dp"
+        card_view:cardUseCompatPadding="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/profilerequestv2pricecontainer"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/profilerequestv2foodprice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5 TL"
+                    android:padding="5dp"
+                    android:background="@drawable/custompricebackground"
+                    />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/profilerequestv2seperator1"
+                android:layout_width="1dp"
+                android:layout_height="45dp"
+                android:background="#dd2F2F2F"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/profilerequestv2pricecontainer"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:layout_toEndOf="@id/profilerequestv2seperator1">
+
+                <TextView
+                    android:id="@+id/profilerequestv2username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000"
+                    android:textSize="18sp"
+                    android:text="Username"
+                    android:fontFamily="sans-serif-smallcaps"/>
+
+                <TextView
+                    android:id="@+id/profilerequestv2foodName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000"
+                    android:textSize="13sp"
+                    android:layout_below="@id/profilerequestv2username"
+                    android:text="for Food"
+                    android:textStyle="italic"
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="sans-serif-condensed"/>
+
+                <LinearLayout
+                    android:id="@+id/profilerequestv2declinebuttoncontainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:background="#DC143C">
+
+                    <Button
+                        android:id="@+id/profilerequestv2declinebutton"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/ic_close_white_36dp"/>
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/profilerequestv2seperator2"
+                    android:layout_width="1dp"
+                    android:layout_height="23dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="#dd2F2F2F"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@id/profilerequestv2declinebuttoncontainer"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="#4CDA64"
+                    android:layout_toStartOf="@id/profilerequestv2seperator2">
+
+                    <Button
+                        android:id="@+id/profilerequestv2acceptbutton"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/ic_check_white_36dp"/>
+
+                </LinearLayout>
+
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+    </android.support.v7.widget.CardView>
+</LinearLayout>

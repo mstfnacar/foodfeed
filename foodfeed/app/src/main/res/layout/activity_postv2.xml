@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Activities.PostActivity"
+
+    >
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/posttoolbarv2"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:minHeight="?attr/actionBarSize"
+                android:background="@color/toolbarbackground2">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="New Post"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:textColor="#FFF"/>
+
+            </android.support.v7.widget.Toolbar>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#00000000"
+                android:padding="5dp">
+
+                <com.pem.mustafa.servertest.Other.CustomImageView
+                    android:id="@+id/postfoodphotov2"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginRight="5dp"
+                    android:padding="5dp"
+                    android:background="@drawable/customprofilphoto"
+                    android:src="@drawable/fooddefaulticon"
+                    android:clickable="true"
+                    android:layout_centerHorizontal="true"
+                    android:onClick="addFoodPhoto"/>
+
+                <EditText
+                    android:id="@+id/postnamev2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000"
+                    android:textSize="17sp"
+                    android:hint="Enter food name"
+                    android:maxLines="1"
+                    android:inputType="text"
+                    android:layout_below="@id/postfoodphotov2"
+                    android:fontFamily="sans-serif-condensed"/>
+
+                <Spinner
+                    android:id="@+id/postcategoryspinnerv2"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_below="@id/postnamev2"
+                    android:layout_marginBottom="3dp"
+                    android:background="@drawable/edittext_underlined"/>
+
+                <EditText
+                    android:id="@+id/postpricev2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000"
+                    android:textSize="17sp"
+                    android:hint="Enter price"
+                    android:maxLines="1"
+                    android:inputType="number"
+                    android:layout_below="@id/postcategoryspinnerv2"
+                    android:fontFamily="sans-serif-condensed"/>
+
+                <EditText
+                    android:id="@+id/postamountv2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000"
+                    android:textSize="17sp"
+                    android:hint="Enter amount"
+                    android:layout_below="@id/postpricev2"
+                    android:maxLines="1"
+                    android:inputType="number"
+                    android:fontFamily="sans-serif-condensed"/>
+
+                <EditText
+                    android:id="@+id/postmeetpointv2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000"
+                    android:textSize="17sp"
+                    android:maxLines="3"
+                    android:hint="Enter address"
+                    android:inputType="textMultiLine"
+                    android:layout_below="@id/postamountv2"
+                    android:fontFamily="sans-serif-condensed"/>
+
+                <Button
+                    android:id="@+id/postgetadressbuttonv2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:text="Get Address"
+                    android:layout_below="@id/postmeetpointv2"
+                    android:layout_alignParentEnd="true"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:textColor="@color/buttontextcolor"
+                    android:background="@drawable/custombuttonbackground2"
+                    android:onClick="getAdressButtonClick"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="60dp"
+                    android:layout_below="@id/postgetadressbuttonv2"
+                    android:layout_centerHorizontal="true">
+                    <Button
+                        android:id="@+id/postsubmitbuttonv2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Submit"
+                        android:layout_centerHorizontal="true"
+                        android:textColor="@color/buttontextcolor"
+                        android:background="@drawable/custombuttonbackground2"
+                        android:onClick="submitPostWithPhoto"
+                        android:layout_gravity="center_horizontal"
+                        />
+
+                    <LinearLayout
+                        android:id="@+id/postprogressv2"
+                        android:layout_width="60dp"
+                        android:layout_height="40dp"
+                        android:visibility="gone"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center">
+
+                        <com.pnikosis.materialishprogress.ProgressWheel
+                            android:visibility="visible"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_marginEnd="2dp"
+                            app:matProg_barColor="#eb5e28"
+                            app:matProg_progressIndeterminate="true"
+                            app:matProg_fillRadius="true" />
+
+                    </LinearLayout>
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

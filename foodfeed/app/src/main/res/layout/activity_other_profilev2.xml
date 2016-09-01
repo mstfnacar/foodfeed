@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.OtherProfile">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/otherprofilev2toolbar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:minHeight="?attr/actionBarSize"
+        android:background="#2F2F2F"
+        app:title="FoodFeed"
+        android:layout_alignParentTop="true"
+        app:subtitle="Profile"
+        app:titleTextColor="#FFF"
+        app:subtitleTextColor="#DDD"/>
+
+
+
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/otherprofilev2toolbar"
+        android:visibility="visible">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:src="@drawable/splash_background1"
+            android:scaleType="centerCrop"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="#66000000"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="150dp"
+            android:background="#dd2F2F2F"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginTop="90dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <com.pem.mustafa.servertest.Other.CustomImageView
+                android:id="@+id/otherprofilev2ProfileImage"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginRight="5dp"
+                android:padding="2dp"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/customprofilphoto"
+                android:src="@drawable/ic_person_white_48dp"
+                android:clickable="false"/>
+
+            <LinearLayout
+                android:id="@+id/otherprofilev2followercountbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@id/otherprofilev2ProfileImage"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:clickable="true"
+                android:onClick="otherfollowerListClick"
+                >
+
+                <View
+                    android:layout_width="35dp"
+                    android:layout_height="2dp"
+                    android:background="#FFF"
+                    android:layout_gravity="start|center_vertical"/>
+
+                <TextView
+                    android:id="@+id/otherprofilev2followercounttv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:layout_margin="5dp"
+                    android:textColor="#FFF"
+                    android:padding="2dp"
+                    android:layout_gravity="center|center_vertical"
+                    android:fontFamily="monospace"
+                    android:gravity="center"
+                    android:background="@drawable/customrectbackground"/>
+
+                <View
+                    android:layout_width="35dp"
+                    android:layout_height="2dp"
+                    android:background="#FFF"
+                    android:layout_gravity="end|center_vertical"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/otherprofilev2followercountbox"
+                android:layout_toStartOf="@id/otherprofilev2ProfileImage"
+                android:gravity="center"
+                android:clickable="true"
+                android:onClick="followerListClick">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFF"
+                    android:textStyle="normal"
+                    android:textSize="15sp"
+                    android:text="Followers"
+                    />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/otherprofilev2profilepictureprogress"
+                android:layout_width="95dp"
+                android:layout_height="95dp"
+                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:visibility="gone"
+                android:background="#dd000000"
+                >
+
+                <com.pnikosis.materialishprogress.ProgressWheel
+                    android:visibility="visible"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:padding="5dp"
+                    android:background="@drawable/customprogresscontainer"
+                    app:matProg_barColor="#1976D2"
+                    app:matProg_barWidth="3dp"
+                    app:matProg_rimColor="#55000000"
+                    app:matProg_progressIndeterminate="true"
+                    app:matProg_fillRadius="true" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/otherprofilev2followingcountbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/otherprofilev2ProfileImage"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:clickable="true"
+                android:onClick="otherfollowingListClick"
+                >
+
+                <View
+                    android:layout_width="35dp"
+                    android:layout_height="2dp"
+                    android:background="#FFF"
+                    android:layout_gravity="start|center_vertical"/>
+
+                <TextView
+                    android:id="@+id/otherprofilev2followingcounttv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:layout_margin="5dp"
+                    android:textColor="#FFF"
+                    android:padding="2dp"
+                    android:layout_gravity="center|center_vertical"
+                    android:fontFamily="monospace"
+                    android:gravity="center"
+                    android:background="@drawable/customrectbackground"/>
+
+                <View
+                    android:layout_width="35dp"
+                    android:layout_height="2dp"
+                    android:background="#FFF"
+                    android:layout_gravity="end|center_vertical"
+                    />
+
+            </LinearLayout>
+
+            <!--<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/otherprofilev2followingcountbox"
+                android:layout_toEndOf="@id/otherprofilev2ProfileImage"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/otherprofilev2sendmessage"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:padding="2dp"
+                    android:src="@drawable/ic_mail_outline_white_48dp"
+                    android:background="@drawable/customrectbackground"
+                    android:clickable="true"
+                    android:onClick="sendMessageOnClick"
+
+                    />
+            </LinearLayout>-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/otherprofilev2followercountbox"
+                android:layout_toStartOf="@id/otherprofilev2ProfileImage"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/otherprofilev2followbttn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:padding="2dp"
+                    android:text="Follow"
+                    android:textColor="#FFF"
+                    android:background="@drawable/customrectbackground"
+                    android:onClick="followButtonOnClick"
+                    />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/otherprofilev2followingcountbox"
+                android:layout_toEndOf="@id/otherprofilev2ProfileImage"
+                android:gravity="center"
+                android:clickable="true"
+                android:onClick="followingListClick">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFF"
+                    android:textStyle="normal"
+                    android:textSize="15sp"
+                    android:text="Following"
+                    />
+
+
+            </LinearLayout>
+
+
+
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_marginTop="200dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/otherprofilev2Username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FFF"
+                android:textSize="18sp"
+                android:text="Username"
+                android:fontFamily="sans-serif-smallcaps"/>
+
+            <TextView
+                android:id="@+id/otherprofilev2Description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FFF"
+                android:textSize="13sp"
+                android:text="An ambitious cook from HEART"
+                android:fontFamily="sans-serif-condensed"/>
+
+            <TextView
+                android:id="@+id/otherprofilev2Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FFF"
+                android:textSize="17sp"
+                android:text="'Newcomer'"
+                android:fontFamily="sans-serif-smallcaps"/>
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_marginTop="280dp"
+            android:layout_width="35dp"
+            android:layout_height="1dp"
+            android:background="#FFF"
+            android:layout_gravity="center_horizontal"
+            />
+
+        <LinearLayout
+            android:id="@+id/otherprofilev2progresswheel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:visibility="gone"
+            android:background="#dd000000"
+            >
+
+            <com.pnikosis.materialishprogress.ProgressWheel
+                android:visibility="visible"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="5dp"
+                android:background="@drawable/customprogresscontainer"
+                app:matProg_barColor="#1976D2"
+                app:matProg_barWidth="3dp"
+                app:matProg_rimColor="#55000000"
+                app:matProg_progressIndeterminate="true"
+                app:matProg_fillRadius="true" />
+
+        </LinearLayout>
+
+
+
+
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:layout_marginTop="290dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:orientation="vertical"
+            android:background="#FFF"
+            android:visibility="visible">
+
+
+            <LinearLayout
+                android:id="@+id/otherprofilev2rcyclerprogresswheel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:visibility="gone"
+                android:background="#bb000000"
+                >
+
+                <com.pnikosis.materialishprogress.ProgressWheel
+                    android:visibility="visible"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:padding="5dp"
+                    android:background="@drawable/customprogresscontainer"
+                    app:matProg_barColor="#1976D2"
+                    app:matProg_barWidth="3dp"
+                    app:matProg_rimColor="#55000000"
+                    app:matProg_progressIndeterminate="true"
+                    app:matProg_fillRadius="true" />
+
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/otherprofilev2postrecyclerview"
+                android:padding="5dp"
+                android:background="#bb000000"
+                android:visibility="visible"/>
+
+
+
+
+
+
+        </RelativeLayout>
+
+
+
+    </FrameLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+</RelativeLayout>

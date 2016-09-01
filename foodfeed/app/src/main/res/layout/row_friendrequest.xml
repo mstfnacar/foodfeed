@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/friendrequestrowcard_view"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardCornerRadius="3dp"
+        card_view:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="75dp">
+
+            <ImageView
+                android:id="@+id/friendrequestrowimage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/cheficon2"/>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="1dp">
+
+                    <TextView
+                        android:id="@+id/friendrequestrowname"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="20sp"
+                        android:text="Name"/>
+
+                    <Button
+                        android:id="@+id/friendrequestrowdeclinebutton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:background="#2196F3"
+                        android:textColor="@color/buttontextcolor"
+                        android:layout_marginEnd="1dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:text="Decline"/>
+
+                    <Button
+                        android:id="@+id/friendrequestrowacceptbutton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:background="#2196F3"
+                        android:textColor="@color/buttontextcolor"
+                        android:layout_marginEnd="7dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_toLeftOf="@id/friendrequestrowdeclinebutton"
+                        android:text="Accept"/>
+
+                </RelativeLayout>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

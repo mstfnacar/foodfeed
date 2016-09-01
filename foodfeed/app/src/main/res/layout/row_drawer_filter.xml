@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/drawer_fiter_horizontalbar"
+        android:layout_marginTop="10dp"
+        android:layout_width="120dp"
+        android:layout_height="1dp"
+        android:background="#FFF"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        android:id="@+id/drawer_filter_filtertext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="#FFF"
+        android:paddingStart="5dp"
+        android:layout_below="@id/drawer_fiter_horizontalbar"
+        android:text="Distance filter"
+        android:fontFamily="sans-serif-smallcaps"/>
+
+    <SeekBar
+        android:id="@+id/drawer_seekbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="30dp"
+        android:paddingEnd="30dp"
+        android:progress="5"
+        android:max="20"
+        android:layout_below="@id/drawer_filter_filtertext"/>
+
+    <TextView
+        android:id="@+id/drawer_seekbar_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5"
+        android:visibility="invisible"
+        android:textSize="18sp"
+        android:textColor="#FFF"
+        android:padding="1dp"
+        android:background="@drawable/customrectbackground"
+        android:fontFamily="sans-serif-smallcaps"/>
+
+</RelativeLayout>

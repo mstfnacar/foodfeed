@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EEE">
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardCornerRadius="3dp"
+        card_view:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/fooddefaulticon"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="5">
+
+            <TextView
+                android:id="@+id/profilerequestfoodName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yemek Adı"
+                android:layout_gravity="center_horizontal"
+                />
+
+            <TextView
+                android:id="@+id/profilerequestusername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="by User"
+                android:layout_gravity="bottom|center_horizontal"
+                />
+
+            <TextView
+                android:id="@+id/profilerequestfoodprice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_gravity="center">
+
+            <Button
+                android:id="@+id/profilerequestacceptbutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Accept"
+                android:background="@color/buttoncolor"
+                android:textColor="@color/buttontextcolor"/>
+            <Button
+                android:id="@+id/profilerequestdeclinebutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Decline"
+                android:layout_marginTop="5dp"
+                android:background="@color/buttoncolor"
+                android:textColor="@color/buttontextcolor"/>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+</LinearLayout>

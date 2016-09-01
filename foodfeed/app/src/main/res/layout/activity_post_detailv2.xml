@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#55dddddd">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/postdetailtoolbarv2"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:minHeight="?attr/actionBarSize"
+        android:background="@color/toolbarbackground2"
+        app:title="FoodFeed"
+        app:subtitle="Meal Detail"
+        app:titleTextColor="@color/toolbartextcolor"
+        app:subtitleTextColor="@color/toolbarsubtextcolor"
+        android:layout_marginBottom="10dp"/>
+
+
+    <ImageView
+        android:id="@+id/postdetailfoodphotov2"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/defaultfood"
+        android:layout_marginBottom="10dp"/>
+
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_marginBottom="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/custom_cardlike_background"
+            >
+
+            <TextView
+                android:id="@+id/postdetailfoodnamev2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="Foodname"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/postdetailpricev2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:textColor="#fff"
+            android:layout_gravity="right"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/customrectbackground"
+            android:text="5 TL"/>
+
+
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Posted by"
+        android:paddingLeft="20dp"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-condensed"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/custom_cardlike_background"
+        android:onClick="userPhotoOnClick"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/postdetailuserphotov2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_person_black_48dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                app:civ_border="true"
+                app:civ_border_color="#55000000"
+                app:civ_border_width="1dp"
+                app:civ_shadow="false"
+                app:civ_shadow_radius="10"
+                app:civ_shadow_color="#8BC34A"/>
+
+            <View
+                android:id="@+id/postdetailseperator1"
+                android:layout_width="1dp"
+                android:layout_height="45dp"
+                android:background="#dd2F2F2F"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/postdetailuserphotov2"/>
+
+
+            <RelativeLayout
+                android:id="@+id/postdetailinfocontainer"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:layout_toEndOf="@id/postdetailseperator1">
+
+                <TextView
+                    android:id="@+id/postdetailusernamev2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000"
+                    android:textSize="18sp"
+                    android:text="Username"
+                    android:fontFamily="sans-serif-smallcaps"/>
+
+
+            </RelativeLayout>
+
+
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_margin="10dp">
+
+        <Button
+            android:id="@+id/postdetailrequestbuttonv2"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:padding="2dp"
+            android:text="Request"
+            android:textColor="#fff"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/custombuttonbackground2"
+            android:onClick="requestButtonClick"
+            android:visibility="visible"
+            />
+
+        <LinearLayout
+            android:id="@+id/postdetailrequestprogressv2"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:background="@drawable/custombuttonbackground2"
+            android:gravity="center"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:visibility="gone">
+
+            <com.pnikosis.materialishprogress.ProgressWheel
+                android:visibility="visible"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginEnd="2dp"
+                app:matProg_barColor="#eb5e28"
+                app:matProg_progressIndeterminate="true"
+                app:matProg_fillRadius="true" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</LinearLayout>
